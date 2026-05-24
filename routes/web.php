@@ -1,11 +1,20 @@
 <?php
 
+use App\Http\Controllers\MailController;
+use App\Http\Controllers\MainController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/page', function () {
+    return view('my-page');
+});
+
+//Route::match(['get', 'post'], '/', [MailController::class, 'sendMail']);
+//Route::get('/testexception', [MainController::class, 'testException']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

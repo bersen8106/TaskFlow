@@ -32,6 +32,11 @@ class UserController extends AdminController
         $grid->column('position', __('Должность'))->sortable();
         $grid->column('description', __('О себе'))->sortable();
         $grid->column('interests', __('Интересы'))->sortable();
+        $grid->column('image', __('Image'))->image('/storage/');
+        $grid->column('linkedin', __('Linkedin'));
+        $grid->column('telegram', __('Telegram'));
+        $grid->column('github', __('Github'));
+        $grid->column('gitlab', __('Gitlab'));
 
         return $grid;
     }
@@ -52,6 +57,11 @@ class UserController extends AdminController
         $show->field('position', __('Должность'));
         $show->field('description', __('О себе'));
         $show->field('interests', __('Интересы'));
+        $show->field('image', __('Image'))->image('/storage/');
+        $show->field('linkedin', __('Linkedin'));
+        $show->field('telegram', __('Telegram'));
+        $show->field('github', __('Github'));
+        $show->field('gitlab', __('Gitlab'));
 
         return $show;
     }
@@ -71,6 +81,11 @@ class UserController extends AdminController
         $form->text('position', __('Должность'));
         $form->textarea('description', __('О себе'));
         $form->textarea('interests', __('Интересы'));
+        $form->image('image', __('Image'));
+        $form->text('linkedin', __('Linkedin'));
+        $form->text('telegram', __('Telegram'));
+        $form->text('github', __('Github'));
+        $form->text('gitlab', __('Gitlab'));
         return $form;
     }
 }
